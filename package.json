@@ -1,0 +1,46 @@
+{
+  "name": "ecommerce-api",
+  "version": "1.0.0",
+  "description": "E-commerce backend API with ACID transactions, caching, and async jobs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test:cache": "node scripts/test-cache.js",
+    "test:bullmq": "node scripts/test-bullmq.js",
+    "test:race": "node scripts/test-race.js",
+    "test:rollback": "node scripts/test-rollback.js",
+    "worker": "node src/workers/emailWorker.js",
+    "test": "jest --detectOpenHandles",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:db-push": "prisma db push",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": ["ecommerce", "api", "express", "prisma", "postgresql"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.21.0",
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^5.10.4",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.8",
+    "pg": "^8.16.3",
+    "redis": "^4.6.13"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prisma": "^5.21.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
+
